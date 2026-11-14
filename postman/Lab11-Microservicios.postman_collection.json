@@ -1,0 +1,2047 @@
+{
+  "info": {
+    "name": "Lab 11 - Microservicios Spring Boot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Laboratorio (tienda)",
+      "item": [
+        {
+          "name": "categoria-service :8082",
+          "item": [
+            {
+              "name": "Crear Laptops (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptops\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear Accesorios (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Accesorios\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear Impresoras (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Impresoras\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar id 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias/1",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Actualizar id 3 (200)",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias/3",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias",
+                    "3"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Impresoras Laser\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Ambiente / perfil activo (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias/ambiente",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias",
+                    "ambiente"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Validacion: campos vacios (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"\",\n  \"estado\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias/999",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias",
+                    "999"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Eliminar no existe (404)",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{categoria}}/api/categorias/999",
+                  "host": [
+                    "{{categoria}}"
+                  ],
+                  "path": [
+                    "api",
+                    "categorias",
+                    "999"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "cliente-service :8081",
+          "item": [
+            {
+              "name": "Crear Juan (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Juan\",\n  \"apellidos\": \"Pérez Gómez\",\n  \"direccion\": \"Av. Javier Prado 123, Lima\",\n  \"telefono\": \"987654321\",\n  \"nroDni\": \"12345678\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear María (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"María\",\n  \"apellidos\": \"Ramírez Torres\",\n  \"direccion\": \"Calle Los Olivos 456\",\n  \"telefono\": \"912345678\",\n  \"nroDni\": \"87654321\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar id 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes/1",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "DNI invalido (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"X\",\n  \"apellidos\": \"Y\",\n  \"nroDni\": \"123\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "DNI duplicado (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Otro\",\n  \"apellidos\": \"Dup\",\n  \"nroDni\": \"12345678\",\n  \"estado\": \"ACTIVO\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cliente}}/api/clientes/50",
+                  "host": [
+                    "{{cliente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "clientes",
+                    "50"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "producto-service :8083",
+          "item": [
+            {
+              "name": "Crear Laptop (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Laptop Lenovo ThinkPad\",\n  \"precio\": 3500.0,\n  \"stock\": 15,\n  \"categoriaId\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear Mouse (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Mouse Logitech M185\",\n  \"precio\": 89.9,\n  \"stock\": 50,\n  \"categoriaId\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear Teclado (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Teclado Mecánico Redragon\",\n  \"precio\": 199.99,\n  \"stock\": 25,\n  \"categoriaId\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Detalle con categoria (llama a categoria-service) (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{producto}}/api/productos/1/detalle",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos",
+                    "1",
+                    "detalle"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Categoria inexistente (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"X\",\n  \"precio\": 10,\n  \"stock\": 1,\n  \"categoriaId\": 99\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Validacion (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{producto}}/api/productos",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"\",\n  \"precio\": -5,\n  \"stock\": -1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{producto}}/api/productos/77",
+                  "host": [
+                    "{{producto}}"
+                  ],
+                  "path": [
+                    "api",
+                    "productos",
+                    "77"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "pedido-service :8084",
+          "item": [
+            {
+              "name": "Crear pedido Juan (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-06-10\",\n  \"idCliente\": 1,\n  \"total\": 3679.8,\n  \"detalles\": [\n    {\n      \"idProducto\": 1,\n      \"cantidad\": 1,\n      \"precio\": 3500.0\n    },\n    {\n      \"idProducto\": 2,\n      \"cantidad\": 2,\n      \"precio\": 89.9\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear pedido María (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-06-10\",\n  \"idCliente\": 2,\n  \"total\": 579.78,\n  \"detalles\": [\n    {\n      \"idProducto\": 2,\n      \"cantidad\": 2,\n      \"precio\": 89.9\n    },\n    {\n      \"idProducto\": 3,\n      \"cantidad\": 2,\n      \"precio\": 199.99\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar id 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos/1",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Actualizar id 2 (200)",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos/2",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos",
+                    "2"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-06-11\",\n  \"idCliente\": 2,\n  \"detalles\": [\n    {\n      \"idProducto\": 3,\n      \"cantidad\": 1,\n      \"precio\": 199.99\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cliente inexistente (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-06-10\",\n  \"idCliente\": 99,\n  \"detalles\": [\n    {\n      \"idProducto\": 1,\n      \"cantidad\": 1,\n      \"precio\": 10\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Producto inexistente (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-06-10\",\n  \"idCliente\": 1,\n  \"detalles\": [\n    {\n      \"idProducto\": 42,\n      \"cantidad\": 1,\n      \"precio\": 10\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Validacion (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"idCliente\": 1,\n  \"detalles\": []\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{pedido}}/api/pedidos/999",
+                  "host": [
+                    "{{pedido}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pedidos",
+                    "999"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Actividad (citas)",
+      "item": [
+        {
+          "name": "paciente-service :8085",
+          "item": [
+            {
+              "name": "Registrar Ana (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dni\": \"70123456\",\n  \"nombres\": \"Ana Lucía\",\n  \"apellidos\": \"Quispe Mamani\",\n  \"fechaNacimiento\": \"1995-03-14\",\n  \"sexo\": \"F\",\n  \"telefono\": \"987111222\",\n  \"direccion\": \"Av. Arequipa 1020, Lima\",\n  \"correo\": \"ana.quispe@mail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Registrar Carlos (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dni\": \"45678912\",\n  \"nombres\": \"Carlos\",\n  \"apellidos\": \"Huamán Rojas\",\n  \"fechaNacimiento\": \"1988-11-02\",\n  \"sexo\": \"M\",\n  \"telefono\": \"955444333\",\n  \"direccion\": \"Jr. Puno 455, Arequipa\",\n  \"correo\": \"carlos.huaman@mail.com\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar id 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes/1",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Actualizar id 2 (200)",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes/2",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes",
+                    "2"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dni\": \"45678912\",\n  \"nombres\": \"Carlos Alberto\",\n  \"apellidos\": \"Huamán Rojas\",\n  \"fechaNacimiento\": \"1988-11-02\",\n  \"sexo\": \"M\",\n  \"telefono\": \"955444333\",\n  \"direccion\": \"Jr. Puno 455, Arequipa\",\n  \"correo\": \"carlos.huaman@mail.com\",\n  \"estado\": \"A\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Validacion (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dni\": \"1\",\n  \"nombres\": \"\",\n  \"apellidos\": \"X\",\n  \"sexo\": \"Z\",\n  \"correo\": \"no-es-correo\",\n  \"fechaNacimiento\": \"2999-01-01\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "DNI duplicado (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"dni\": \"70123456\",\n  \"nombres\": \"Dup\",\n  \"apellidos\": \"Dup\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{paciente}}/api/pacientes/99",
+                  "host": [
+                    "{{paciente}}"
+                  ],
+                  "path": [
+                    "api",
+                    "pacientes",
+                    "99"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "medico-service :8086",
+          "item": [
+            {
+              "name": "Crear especialidad Cardiología (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/especialidades",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "especialidades"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Cardiología\",\n  \"descripcion\": \"Enfermedades del corazón\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Crear especialidad Pediatría (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/especialidades",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "especialidades"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"nombre\": \"Pediatría\",\n  \"descripcion\": \"Atención de niños\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar especialidades (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{medico}}/api/especialidades",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "especialidades"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Registrar Dra. Salazar (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cmp\": \"CMP-045123\",\n  \"nombres\": \"Rosa\",\n  \"apellidos\": \"Salazar Vega\",\n  \"telefono\": \"999888777\",\n  \"correo\": \"rsalazar@saludintegral.pe\",\n  \"idEspecialidad\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Registrar Dr. Paredes (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cmp\": \"CMP-078456\",\n  \"nombres\": \"Jorge\",\n  \"apellidos\": \"Paredes León\",\n  \"telefono\": \"988777666\",\n  \"correo\": \"jparedes@saludintegral.pe\",\n  \"idEspecialidad\": 2\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Horario medico 1 LUNES (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/1/horarios",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "1",
+                    "horarios"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diaSemana\": \"LUNES\",\n  \"horaInicio\": \"08:00\",\n  \"horaFin\": \"13:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Horario medico 1 MIERCOLES (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/1/horarios",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "1",
+                    "horarios"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diaSemana\": \"MIERCOLES\",\n  \"horaInicio\": \"14:00\",\n  \"horaFin\": \"19:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Horario medico 2 MARTES (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/2/horarios",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "2",
+                    "horarios"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diaSemana\": \"MARTES\",\n  \"horaInicio\": \"09:00\",\n  \"horaFin\": \"12:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar horarios medico 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/1/horarios",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "1",
+                    "horarios"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Listar medicos (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{medico}}/api/medicos",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar medico 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/1",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Actualizar medico 2 (200)",
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/2",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "2"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cmp\": \"CMP-078456\",\n  \"nombres\": \"Jorge Luis\",\n  \"apellidos\": \"Paredes León\",\n  \"telefono\": \"988777666\",\n  \"correo\": \"jparedes@saludintegral.pe\",\n  \"idEspecialidad\": 2,\n  \"estado\": \"A\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Especialidad inexistente (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cmp\": \"CMP-1\",\n  \"nombres\": \"X\",\n  \"apellidos\": \"Y\",\n  \"idEspecialidad\": 9\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "CMP duplicado (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"cmp\": \"CMP-045123\",\n  \"nombres\": \"X\",\n  \"apellidos\": \"Y\",\n  \"idEspecialidad\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Horario con fin antes de inicio (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/1/horarios",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "1",
+                    "horarios"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diaSemana\": \"LUNES\",\n  \"horaInicio\": \"13:00\",\n  \"horaFin\": \"08:00\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{medico}}/api/medicos/50",
+                  "host": [
+                    "{{medico}}"
+                  ],
+                  "path": [
+                    "api",
+                    "medicos",
+                    "50"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "cita-service :8087",
+          "item": [
+            {
+              "name": "Registrar cita lunes (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-16\",\n  \"hora\": \"09:00\",\n  \"idPaciente\": 1,\n  \"idMedico\": 1,\n  \"motivo\": \"Dolor en el pecho al hacer ejercicio\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Registrar cita martes (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-17\",\n  \"hora\": \"10:30\",\n  \"idPaciente\": 2,\n  \"idMedico\": 2,\n  \"motivo\": \"Control de rutina\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Registrar cita miercoles (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-18\",\n  \"hora\": \"15:00\",\n  \"idPaciente\": 2,\n  \"idMedico\": 1,\n  \"motivo\": \"Chequeo cardiológico\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Listar (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Buscar id 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Detalle con paciente y medico (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/detalle",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "detalle"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Confirmar cita 1 (200)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/estado",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "estado"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"estado\": \"CONFIRMADA\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Registrar atencion cita 1 -> ATENDIDA (201)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/atencion",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "atencion"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"diagnostico\": \"Angina estable\",\n  \"tratamiento\": \"Nitroglicerina sublingual según necesidad\",\n  \"observaciones\": \"Control en 30 días\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Ver atencion cita 1 (200)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/atencion",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "atencion"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Cancelar cita 3 (200)",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/3/cancelar",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "3",
+                    "cancelar"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "Medico ocupado a esa hora (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-16\",\n  \"hora\": \"09:00\",\n  \"idPaciente\": 2,\n  \"idMedico\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Fuera del horario del medico (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-16\",\n  \"hora\": \"18:00\",\n  \"idPaciente\": 2,\n  \"idMedico\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Paciente inexistente (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2026-11-16\",\n  \"hora\": \"09:00\",\n  \"idPaciente\": 99,\n  \"idMedico\": 1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Validacion (400)",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"fecha\": \"2020-01-01\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Estado invalido (400)",
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/estado",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "estado"
+                  ]
+                },
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"estado\": \"PENDIENTE\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "name": "Cancelar cita ya atendida (400)",
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/1/cancelar",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "1",
+                    "cancelar"
+                  ]
+                }
+              }
+            },
+            {
+              "name": "No existe (404)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{cita}}/api/citas/99",
+                  "host": [
+                    "{{cita}}"
+                  ],
+                  "path": [
+                    "api",
+                    "citas",
+                    "99"
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "cliente",
+      "value": "http://localhost:8081"
+    },
+    {
+      "key": "categoria",
+      "value": "http://localhost:8082"
+    },
+    {
+      "key": "producto",
+      "value": "http://localhost:8083"
+    },
+    {
+      "key": "pedido",
+      "value": "http://localhost:8084"
+    },
+    {
+      "key": "paciente",
+      "value": "http://localhost:8085"
+    },
+    {
+      "key": "medico",
+      "value": "http://localhost:8086"
+    },
+    {
+      "key": "cita",
+      "value": "http://localhost:8087"
+    }
+  ]
+}

@@ -5,6 +5,7 @@ import com.tecsup.model.Categoria;
 import com.tecsup.services.CategoriaService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,15 @@ public class CategoriaController {
 
     @Autowired
     private CategoriaService service;
+
+    @Value("${empresa.ambiente}")
+    private String ambiente;
+
+    // Muestra qué perfil (dev / prod) está activo
+    @GetMapping("/ambiente")
+    public ResponseEntity<Map<String, String>> ambiente() {
+        return ResponseEntity.ok(Map.of("ambiente", ambiente));
+    }
 
     @GetMapping
     public ResponseEntity<List<Categoria>> listar() {
